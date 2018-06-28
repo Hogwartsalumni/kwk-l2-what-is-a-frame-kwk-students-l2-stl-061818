@@ -1,18 +1,37 @@
+ <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-  </head>
+    <head>
+      <title>VR</title>
+        <script src='https://aframe.io/releases/0.8.0/aframe.min.js'></script>
+    </head>
+    <body>
+        <a-scene light="defaultLightsEnabled: false">
+            <a-entity light='type: hemisphere; intensity: 0.75'></a-entity>
+            <a-entity environment='preset: forest; horizonColor: #2787E8; groundColor: #3DA128; groundColor2: #3D6A28'></a-entity>
+            <a-entity cameria look-controls wasd-controls position='10 0 0'></a-entity>
+                <a-assets>
+                  <img src='https://thenextweb.com/wp-content/blogs.dir/1/files/2015/06/Prague_Getty.jpg'>
+                </a-assets>
+                
+                <!-- <a-sky src='assets/Prague_Getty.jpg'></a-sky>
+                <a-circle radius='2' color='yellow' position='0 3 -7'></a-circle> 
+                <a-plane src='assets/cobblestone.png' position='0 0 -5' rotation='-90 0 0' width='5' height='5'></a-plane> -->
+                <a-box id='wall-1' color='#9BFFFA' position='0 2 -10' geometry='width: 14; height: 10; depth: 1'></a-box>
+                <a-box id='wall-2' color='#9BFFFA' position='6.5 0 -4.5' geometry='width: 1; height: 14; depth: 10'></a-box>
+                <a-box id='wall-3' color='#9BFFFA' position='-6.5 0 -4.5' geometry='width: 1; height: 14; depth: 10'></a-box>
+                <a-box id='wall-4-left-door' color='#9BFFFA' position='-4 0 0' geometry='width: 5; height: 14; depth: 1'></a-box>
+                <a-box id='wall-4-right-door' color='#9BFFFA' position='4 0 0' geometry='width: 5; height: 14; depth: 1'></a-box>
+                <a-box id='wall-4-upper-door' color='#9BFFFA' position='0 5 0' geometry='width: 3; height: 4; depth: 1'></a-box>
+                <a-cone id='roof' color='purple' position='0 12 -5' geometry='radiusBottom: 9.5; height: 10'></a-cone>
+                <a-octahedron id='startingBlock' color='white' position='0 2 -5'></a-octahedron>
+                <a-entity>
+                  <a-text value='Hello!' position='-0.5 2 -3' sacle='2 2 2' color='purple' width='10'></a-text>
+                </a-entity>
+                
+                
+        </a-scene>
 
-  <body>
-
-    <a-scene>
-      <a-box position="-1 1 -3" rotation="45 45 45" color="#4CC3D9"></a-box>
-      <a-torus-knot position="0 2.5 -5"radius-inner="1" radius-outer="2" color="yellow"></a-torus-knot>
-      <a-plane position="0 0 -3.5" rotation="-90 0 0" width="4" height="2" color="#7BC8A4"></a-plane>
-      <a-cylinder position="1 0.75 -3" radius="0.25" height="1" color="#F88"></a-cylinder>
-      <a-sky color="#99f"></a-sky>
-    </a-scene>
-
-  </body>
-
+        <script src='index.js'></script>
+          <script src='https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js'></script>
+    </body>
 </html>
